@@ -1,0 +1,25 @@
+import java.io.File;
+import java.io.IOException;
+
+public class Rename {
+
+// method to rename a file on the PC to sequential numbers 
+
+    public static void main(String[] argv) throws IOException {
+
+        File folder = new File("\\Folder\\file");
+        File[] listOfFiles = folder.listFiles();
+
+        for (int i = 0; i < listOfFiles.length; i++) {
+
+            if (listOfFiles[i].isFile()) {
+
+                File f = new File("c:\\Folder\\file\\"+listOfFiles[i].getName()); 
+
+                f.renameTo(new File("c:\\Folder\\file\\"+i+".txt"));
+            }
+        }
+
+        System.out.println("Renamed");
+    }
+}
